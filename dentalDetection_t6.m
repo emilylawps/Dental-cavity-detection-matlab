@@ -29,5 +29,6 @@ figure, imshow(bin), title('Binary image'); % the rest is 0 which is black
 %calculate percentage of cavity
 white = nnz(bin)                        %total white pixels (non cavity)
 black = numel(bin)-white                %total black pixels (cavity)
-blackPercent = (black/numel(bin))*100   %percentage of black pixels
+blackPercent = round((black/numel(bin))*100, 2)%percentage of black pixels
 
+h = msgbox(['The percentage of cavity is ' num2str(blackPercent) '%'], 'Result');
