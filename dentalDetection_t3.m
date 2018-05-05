@@ -3,7 +3,7 @@ close all
 clear all
 
 %Read image files
-I = imread('t6.jpg');
+I = imread('t3.jpg');
 
 %Convert images to grayscale
 gray = rgb2gray(I);

@@ -3,7 +3,7 @@ close all
 clear all
 
 %Read image files
-I = imread('t6.jpg');
+I = imread('t3.jpg');
 
 %Convert images to grayscale
 gray = rgb2gray(I);
@@ -24,9 +24,12 @@ imshow(fil), title('Median filter');
 figure;
 sharp = imsharpen(fil);
 subplot(1,2,1), imshow(fil), title('Sharpen image');
-subplot(1,2,2), imhist(fil), title('Histogram t1');
+subplot(1,2,2), imhist(gray), title('Histogram t1');
 %figure, imshow(imsharpen(fil2)),title('Sharpen ave');
 
 %Convert image to binary
-bin = roicolor(sharp, 60, 255);% all pixels in (120, 255) will be 1 and white
-figure, imshow(bin), title('Binary image'); % the rest is 0 which is black
+bin=roicolor(I, 120, 255);   % all pixels in (120, 255) will be 1 and white
+figure, imshow(bin)          % the rest is 0 which is black
+		     
+             
+figure, imhist(BW);
