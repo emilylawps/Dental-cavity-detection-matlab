@@ -3,12 +3,14 @@ close all
 clear all
 
 %Read image files
-I = imread('case3.jpg');
+[baseFileName, folder] = uigetfile();
+fileName = fullfile(folder, baseFileName);
+I = imread(fileName);
 
 %Convert images to grayscale
 gray = rgb2gray(I);
 
-%Show image and histogram
+%Show image
 figure;
 subplot(3,2,1), imshow(I), title('Original');
 subplot(3,2,3), imshow(gray), title('Grayscale');
